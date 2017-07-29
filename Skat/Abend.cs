@@ -5,14 +5,13 @@ namespace Skat
 {
     public class Abend
     {
-        public Guid id;
+        public int AbendId;
         public List<Spieler> spieler;
         public List<Spiel> spiele;
         public DateTime datetime;
         
         public Abend(List<Spieler> spieler)
         {
-            this.id = new Guid("secret");
             this.datetime = System.DateTime.Now;
             this.spieler = spieler;
             this.spiele = new List<Spiel>();       
@@ -27,7 +26,7 @@ namespace Skat
 
         public Spiel getNextSpiel()
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
