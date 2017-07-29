@@ -6,6 +6,7 @@ namespace Skat
     {
         public DbSet<Abend> abende { get; set; }
         public DbSet<Spiel> spiele { get; set; }
+        public DbSet<Spieler> spieler { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

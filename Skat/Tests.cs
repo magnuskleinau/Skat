@@ -6,7 +6,7 @@ namespace Skat
 {
     public class Tests
     {
-
+        // adding one spiel and one abend and 3 players to the database
         public static void SeedData()
         {
             var spieler = new List<Spieler>();
@@ -40,11 +40,12 @@ namespace Skat
             };
             
             var abend = new Abend(spieler,regeln);
+            
 
            
             
             
-            var spiel = new Spiel(abend,abend.AbendId,0,spieler1,spieler2, Spieltyp.FARBE, Farbe.HERZ, Spielstaerke.M1, Ansage.KEINE, false, true, true, false, false, 59 ); 
+            var spiel = new Spiel(abend,abend.id,0,spieler1,spieler2, Spieltyp.FARBE, Farbe.HERZ, Spielstaerke.M1, Ansage.KEINE, false, true, true, false, false, 59 ); 
             
             
             
@@ -52,6 +53,9 @@ namespace Skat
             {
                 skatContext.abende.Add(abend);
                 skatContext.spiele.Add(spiel);
+                skatContext.spieler.Add(spieler1);
+                skatContext.spieler.Add(spieler2);
+                skatContext.spieler.Add(spieler3);
                 skatContext.SaveChanges();
             }
         }
@@ -63,12 +67,15 @@ namespace Skat
             
             using (var skatContext = new SkatContext())
             {
-                var abende = skatContext.abende.ToList();
-                var spiele = skatContext.spiele.ToList();
-                Console.WriteLine($"Die Datenbank enthält momentan {abende.Count} Abende");
-                Console.WriteLine($"ID des ersten Abends ist: {abende[0].AbendId}");
-                Console.WriteLine($"Die Datenbank enthält momentan {spiele.Count} Spiele");
-                Console.WriteLine($"ID des ersten Spiele ist: {spiele[0].id}");
+                var _abende = skatContext.abende.ToList();
+                var _spiele = skatContext.spiele.ToList();
+                var _spieler = skatContext.spieler.ToList();
+                Console.WriteLine($"Die Datenbank enthält momentan {_abende.Count} Abende");
+                Console.WriteLine($"ID des ersten Abends ist: {_abende[0].id}");
+                Console.WriteLine($"Die Datenbank enthält momentan {_spiele.Count} Spiele");
+                Console.WriteLine($"ID des ersten Spiele ist: {_spiele[0].id}");
+                Console.WriteLine($"Die Datenbank enthält momentan {_spieler.Count} Spieler");
+                Console.WriteLine($"Name des ersten Spieler ist: {_spieler[0].name}");
 
             }
         }
