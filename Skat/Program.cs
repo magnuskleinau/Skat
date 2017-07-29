@@ -8,6 +8,7 @@ namespace Skat
         {
             var time = System.DateTime.Now;
             Console.WriteLine(time);
+           
         }
     }
 }

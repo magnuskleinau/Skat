@@ -15,7 +15,8 @@ namespace Skat
             this.id = new Guid("secret");
             this.datetime = System.DateTime.Now;
             this.spieler = spieler;
-            this.spiele = new List<Spiel>();          
+            this.spiele = new List<Spiel>();       
+        
         }
     }
 }
