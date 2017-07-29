@@ -24,6 +24,9 @@ namespace Skat
 
     public class Spiel
     {
+        //abend is passed to acces ruleset--> will be changed later, when ruleset is accesible via Database
+        public Abend abend;
+
         //passed variables
         public Spieler spieler;
         public Spieler geber;
@@ -53,7 +56,7 @@ namespace Skat
         public int spielwert;
 
 
-        public Spiel(Guid abendId, Guid id, int spielNummer, Spieler spieler, Spieler geber, Spieltyp spieltyp, Farbe farbe, Spielstaerke spielstaerke, Ansage ansage, bool bock, bool re, bool kontra, bool hand, bool ouvert, int punkte)
+        public Spiel(Abend abend, Guid abendId, Guid id, int spielNummer, Spieler spieler, Spieler geber, Spieltyp spieltyp, Farbe farbe, Spielstaerke spielstaerke, Ansage ansage, bool bock, bool re, bool kontra, bool hand, bool ouvert, int punkte)
         {
             //pass parameters to local variables
             this.abendId = abendId;
@@ -77,9 +80,38 @@ namespace Skat
             calculateSpielwert();
         }
 
+        //check which type of game was played and calculate the points based on that
         private void calculateSpielwert()
         {
-            spielwert = (int)farbe * (int)spielstaerke;
+            switch (spieltyp){
+                case Spieltyp.FARBE:
+                    spielwert = (int)farbe * (int)spielstaerke;
+                    break;
+                case Spieltyp.NULL:
+                    if (hand && ouvert)
+                    {
+                        spielwert = 59;
+                    }
+                    else if(ouvert)
+                    {
+                        spielwert = 46;
+                    }
+                    else if(hand)
+                    {
+                        spielwert = 35;
+                    }
+                    else 
+                    {
+                        spielwert = 23;
+                    }
+                    break;
+                case Spieltyp.GRAND:
+                    spielwert = (int)abend.abendRegeln.grandwert * (int)spielstaerke;
+                    break;
+                case Spieltyp.RAMSCH:
+                    break;
+            }
+            
         }
 
         public Spiel(Guid abendId, Ansage ansage)
