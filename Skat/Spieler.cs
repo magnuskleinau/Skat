@@ -5,13 +5,12 @@ namespace Skat
 
     public class Spieler
     {
-        public Guid id;
+        public int id { get; set; }
         public String name;
 
 
         public Spieler(string name)
         {
-            this.id = new Guid();
             this.name = name;
         }
     }

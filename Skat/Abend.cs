@@ -6,7 +6,7 @@ namespace Skat
 {
     public class Abend
     {
-        public Guid AbendId { get; set; }
+        public int AbendId { get; set; }
         public List<Spieler> spieler;
         public List<Spiel> spiele;
         public DateTime datetime;
@@ -19,6 +19,11 @@ namespace Skat
             this.spiele = new List<Spiel>();
             this.abendRegeln = abendRegeln;
         
+        }
+
+        private Abend()
+        {
+            
         }
 
 

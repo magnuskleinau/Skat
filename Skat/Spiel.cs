@@ -31,8 +31,8 @@ namespace Skat
         public Spieler spieler;
         public Spieler geber;
 
-        public Guid id { get; set; }
-        public Guid abendId;
+        public int id { get; set; }
+        public int abendId;
 
         public Spieltyp spieltyp;
         public Farbe farbe;
@@ -55,8 +55,11 @@ namespace Skat
 
         public int spielwert;
 
-
-        public Spiel(Abend abend, Guid abendId,  int spielNummer, Spieler spieler, Spieler geber, Spieltyp spieltyp, Farbe farbe, Spielstaerke spielstaerke, Ansage ansage, bool bock, bool re, bool kontra, bool hand, bool ouvert, int punkte)
+        private Spiel()
+        {
+            
+        }
+        public Spiel(Abend abend, int abendId,  int spielNummer, Spieler spieler, Spieler geber, Spieltyp spieltyp, Farbe farbe, Spielstaerke spielstaerke, Ansage ansage, bool bock, bool re, bool kontra, bool hand, bool ouvert, int punkte)
         {
             //pass parameters to local variables
             this.abendId = abendId;
@@ -113,7 +116,7 @@ namespace Skat
             
         }
 
-        public Spiel(Guid abendId, Ansage ansage)
+        public Spiel(int abendId, Ansage ansage)
         {
             this.abendId = abendId;
 

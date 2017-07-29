@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Skat
 {
@@ -8,51 +9,8 @@ namespace Skat
         static void Main(string[] args)
         {
             // test database
-            var spieler = new List<Spieler>();
-            var spieler1 = new Spieler("Jan");
-            var spieler2 = new Spieler("Magnus");
-            var spieler3 = new Spieler("Johannes");
-            
-            spieler.Add(spieler1);
-            spieler.Add(spieler2);
-            spieler.Add(spieler3);
-
-
-            AbendRegeln regeln = new AbendRegeln
-            {
-                bockRamsch = new BockRamsch
-                {
-                    KontraGewonnen = true,
-                    KontraVerloren = true,
-                    SchneiderGewonnen = true,
-                    SchneiderVerloren = true,
-                    Spaltarsch = true
-                },
-                eingepassterRamsch = true,
-                grandHandBeiRamsch = false,
-                grandwert = Grandwerte.ACHTZEHN,
-                kontraErlaubt = true,
-                kontraNurBeiReizen = true,
-                reErlaubt = true,
-                schneiderAb = SchneiderAb.DREISSIG
-
-            };
-            
-            var abend = new Abend(spieler, regeln);
-
-            using (var skatContext = new SkatContext())
-            {
-                skatContext.abende.Add(abend);
-                skatContext.SaveChanges();
-                
-            }
-           
-
-
-
-
-
-
+            Tests.SeedData();
+            Tests.DbTest();
 
         }
     }
