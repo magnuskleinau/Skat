@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Skat
 {
@@ -6,9 +7,16 @@ namespace Skat
     {
         static void Main(string[] args)
         {
-            var time = System.DateTime.Now;
-            Console.WriteLine(time);
-           
+            var spieler = new List<Spieler>();
+            spieler.Add(new Spieler());
+
+
+
+            var spieler1 = new Spieler()
+            
+            
+            
+            var abend = new Abend(new);
         }
     }
 }
