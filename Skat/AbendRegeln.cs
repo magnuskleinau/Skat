@@ -2,14 +2,14 @@
 {
     public struct AbendRegeln
     {
-        public SchneiderAb SchneiderAb;
-        public BockRamsch BockRamsch;
-        public bool KontraErlaubt;
-        public bool ReErlaubt;
-        public bool KontraNurBeiReizen;
-        public Grandwerte Grandwerte;
-        public bool GrandHandBeiRamsch;
-        public bool EingepassterRamsch;
+        public SchneiderAb schneiderAb;
+        public BockRamsch bockRamsch;
+        public bool kontraErlaubt;
+        public bool reErlaubt;
+        public bool kontraNurBeiReizen;
+        public Grandwerte grandwert;
+        public bool grandHandBeiRamsch;
+        public bool eingepassterRamsch;
 
 
     }

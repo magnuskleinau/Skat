@@ -9,12 +9,14 @@ namespace Skat
         public List<Spieler> spieler;
         public List<Spiel> spiele;
         public DateTime datetime;
+        public AbendRegeln abendRegeln;
         
-        public Abend(List<Spieler> spieler)
+        public Abend(List<Spieler> spieler, AbendRegeln abendRegeln)
         {
             this.datetime = System.DateTime.Now;
             this.spieler = spieler;
-            this.spiele = new List<Spiel>();       
+            this.spiele = new List<Spiel>();
+            this.abendRegeln = abendRegeln;
         
         }
 
