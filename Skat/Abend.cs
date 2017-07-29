@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Skat
 {
     public class Abend
     {
-        public int AbendId;
+        public Guid AbendId { get; set; }
         public List<Spieler> spieler;
         public List<Spiel> spiele;
         public DateTime datetime;
