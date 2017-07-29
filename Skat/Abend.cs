@@ -18,5 +18,16 @@ namespace Skat
             this.spiele = new List<Spiel>();       
         
         }
+
+
+        public void addSpiel(Spiel spiel)
+        {
+            this.spiele.Add(spiel);
+        }
+
+        public Spiel getNextSpiel()
+        {
+            
+        }
     }
 }
