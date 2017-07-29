@@ -7,6 +7,7 @@ namespace Skat
     {
         static void Main(string[] args)
         {
+            // test database
             var spieler = new List<Spieler>();
             var spieler1 = new Spieler("Jan");
             var spieler2 = new Spieler("Magnus");
