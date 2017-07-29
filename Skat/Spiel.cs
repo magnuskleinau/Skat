@@ -80,6 +80,22 @@ namespace Skat
             //init other variables
             this.datetime = DateTime.Now;
             calculateSpielwert();
+            calculateSieger();
+        }
+
+        private void calculateSieger()
+        {
+            if (spieltyp == Spieltyp.FARBE || spieltyp == Spieltyp.GRAND)
+            {
+                if (punkte > 60)
+                {
+                    gewonnen = true;
+                }
+                else
+                {
+                    gewonnen = false;
+                }
+            }
         }
 
         //check which type of game was played and calculate the points based on that
