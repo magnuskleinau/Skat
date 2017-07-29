@@ -16,8 +16,29 @@ namespace Skat
             spieler.Add(spieler1);
             spieler.Add(spieler2);
             spieler.Add(spieler3);
+
+
+            AbendRegeln regeln = new AbendRegeln
+            {
+                bockRamsch = new BockRamsch
+                {
+                    KontraGewonnen = true,
+                    KontraVerloren = true,
+                    SchneiderGewonnen = true,
+                    SchneiderVerloren = true,
+                    Spaltarsch = true
+                },
+                eingepassterRamsch = true,
+                grandHandBeiRamsch = false,
+                grandwert = Grandwerte.ACHTZEHN,
+                kontraErlaubt = true,
+                kontraNurBeiReizen = true,
+                reErlaubt = true,
+                schneiderAb = SchneiderAb.DREISSIG
+
+            };
             
-            var abend = new Abend(spieler);
+            var abend = new Abend(spieler, regeln);
 
             using (var skatContext = new SkatContext())
             {
