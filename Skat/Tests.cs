@@ -35,7 +35,9 @@ namespace Skat
                 kontraErlaubt = true,
                 kontraNurBeiReizen = true,
                 reErlaubt = true,
-                schneiderAb = SchneiderAb.DREISSIG
+                schneiderAb = SchneiderAb.DREISSIG,
+                zaehlweise = Zaehlweise.KLASSISCH
+                
 
             };
             

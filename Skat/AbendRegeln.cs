@@ -10,7 +10,7 @@
         public Grandwerte grandwert;
         public bool grandHandBeiRamsch;
         public bool eingepassterRamsch;
-
+        public Zaehlweise zaehlweise;
 
     }
 
@@ -26,6 +26,13 @@
         ZWANZIG=20,
         ZWEIUNDZWANZIG=22,
         VIERUNDZWANZIG=24
+    }
+
+    public enum Zaehlweise
+    {
+        KLASSISCH,
+        BIERLACHS,
+        SEEGERFABIAN
     }
     
     
